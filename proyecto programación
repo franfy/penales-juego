@@ -1,0 +1,231 @@
+package programacion;
+import java.util.*;
+public class XD {
+
+	public static void main(String[] args) {
+		Scanner lector = new Scanner(System.in);
+		int op = 0;
+		String[] player = new String[2];
+		do { //menú
+			System.out.println("Seleccione la opción que prefiera:");
+			System.out.println("1- Empezar partido!! ");
+			System.out.println("2- Elegir nombres de los jugadores");
+			System.out.println("3- Leer las reglas");
+			System.out.println("4- Salir");
+			op = lector.nextInt();
+			if (op ==1) {
+				for (int z = 0; z < 100 && op ==0; z++) {
+					System.out.println(" ");
+				}
+				
+				
+			} else if (op ==2) {
+				for (int z = 0; z < 100 && op ==0; z++) {
+					System.out.println(" ");
+				}
+				nombre(player);
+				
+				
+			} else if (op ==3) {
+				
+				reglas();
+				
+				
+			} else if (op ==4) {
+				for (int z = 0; z < 100 && op ==0; z++) {
+					System.out.println(" ");
+				}
+				System.out.println("Que tenga un buen dia");
+				op = 0;
+			}
+		} while (op != 0);	
+		lector.close();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void reglas() {
+		/* puntos del arco:
+		 * el jugador uno ingresa un número entre 1 y 13 que representan cada posición en la que puede tirar la pelota
+		 * 
+		 * el jugador dos ingresa un número entre 1 y 5 en el caso del jugador dos cada número abarca una zona:
+		 * 		1 abarca las posiciones: 1, 2, 3, 4 y 5
+		 *      2 abarca las posiciones: 6, 8 y 9
+		 *      3 abarca las posiciones: 7, 8 y 5
+		 *      4 abarca las posiciones: 13, 12 y 11
+		 *      5 abarca las posiciones: 4, 12 y 10
+		 * si el número del jugador uno está entre el rango del que eligió el jugador dos significa que atajó sino es gol
+		 * 
+		 */
+		Scanner lector = new Scanner(System.in);
+		int op = 0;
+		for (int z = 0; z < 100 && op ==0; z++) {
+			System.out.println(" ");
+		}
+		do {
+			System.out.println("¡Bienvenido al manual de usuario!");
+			System.out.println("Aquí podrás aprender como funciona el juego a detalle");
+			System.out.println("Tanto el jugador 1 y el jugador 2");
+			System.out.println("Sobre que jugador te gustaría saber?:");
+			System.out.println("1- jugador 1");
+			System.out.println("2- jugador 2");
+			System.out.println("3- volver al menú");
+			op = lector.nextInt();
+			if (op ==1) {
+				regla_p1();
+				
+			} else if (op ==2) {
+				regla_p2();
+				
+			} else if (op ==3) {
+				op = 0;
+				
+			}
+		} while (op != 0);
+		lector.close();
+	}
+	
+	public static void regla_p1() {
+		Scanner lector = new Scanner(System.in);
+		int op = 0;
+		String XD;
+		for (int z = 0; z < 100 && op ==0; z++) {
+			System.out.println(" ");
+		}
+		System.out.println("|----------------------------------------|");
+		System.out.println("|6                                     11|");
+		System.out.println("|            9       2       13          |");
+		System.out.println("|                                        |");
+		System.out.println("|       8            1           12      |");
+		System.out.println("|                                        |");
+		System.out.println("|                                        |");
+		System.out.println("|7            5      3      4|         10|");
+		System.out.println("|----------------------------------------|");
+		System.out.println("Cuando la partida inicie el jugador 1 podrá elegir a donde patear la pelota.");
+		System.out.println("(Representado por numeros del 1 al 13 )");
+		System.out.println("");
+		System.out.println("Cada vez que el jugador patee la pelota tiene una probabilidad de fallar el tiro pero");
+		System.out.println("esa probabilidad puede subir si anota muchos goles y viceversa, puede bajar si le atajan muchos");
+		System.out.println("");
+		System.out.println("¿Usted he entendido? si/no");
+		XD = lector.next();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void regla_p2() {
+		Scanner lector = new Scanner(System.in);
+		int op = 0;
+		String XD;
+		for (int z = 0; z < 100 && op ==0; z++) {
+			System.out.println(" ");
+		}
+		System.out.println("|----------------------------------------|");
+		System.out.println("|                                        |");
+		System.out.println("|     2                          5       |");
+		System.out.println("|                                        |");
+		System.out.println("|                   1                    |");
+		System.out.println("|                                        |");
+		System.out.println("|     3                          4       |");
+		System.out.println("|                                        |");
+		System.out.println("|----------------------------------------|");
+		System.out.println("");
+		System.out.println("El jugador dos puede elegir entre 5 posiciones (representadas como números en el mapa anteriormente");
+		System.out.println(" mostrado), cada posición cubre entre 3 y 5 posibles lugares en el que el jugador 1 podría marcar gol");
+		System.out.println("");
+		System.out.println("¿Usted ha entendido? si/no");
+		XD = lector.next();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static String[] nombre(String[] player) {
+		int op = 0;
+		Scanner lector = new Scanner(System.in);
+		
+		do { // menú para elegir nombre del jugador
+			System.out.println("¿A que jugador decea cambiarle el nombre?");
+			System.out.println("1- Jugador 1");
+			System.out.println("2- Jugador 2");
+			System.out.println("3- volver al menú");
+			
+			if (op == 1) { //nombre del jugador uno
+				System.out.println("Ingrese el nombre del jugador 1: ");
+				player[0] = lector.next();
+				
+			} else if (op == 2) { //nombre del jugador dos
+				System.out.println("Ingrese el nombre del jugador 2: ");
+				player[1] = lector.next();
+				
+			} else if (op == 3) { //volver al menú principal
+				op = 0;
+			}
+		} while (op != 0);
+		lector.close();
+		return player;
+	}
+}
